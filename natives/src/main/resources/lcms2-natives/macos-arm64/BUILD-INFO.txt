@@ -1,0 +1,4 @@
+Little CMS 2.19 (macos-arm64), built from unmodified source
+built: 2026-08-07T20:10:42Z on Darwin arm64
+source: https://github.com/mm2/Little-CMS tag lcms2.19
+cmake flags: Release, shared library only, tools/tests/plugins disabled

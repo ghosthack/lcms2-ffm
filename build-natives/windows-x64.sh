@@ -20,7 +20,7 @@ mkdir -p "$DEST"
 find "$DEST" -type f -delete
 : > "$DEST/manifest.txt"
 
-dll="$(find "$PREFIX" -type f -iname 'lcms2*.dll' | head -1)"
+dll="$(find "$PREFIX" -type f -iname '*lcms2*.dll' | head -1)"
 [ -n "$dll" ] || { echo "installed lcms2 DLL not found"; exit 1; }
 for runtime in libwinpthread-1.dll libgcc_s_seh-1.dll; do
   if [ -f "/mingw64/bin/$runtime" ] && objdump -p "$dll" | grep -qi "DLL Name: $runtime"; then
@@ -48,4 +48,3 @@ cp "$SRC/LICENSE" "$DEST/LICENSE"
 
 echo "staged:"
 ls -la "$DEST"
-
